@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Talat Gouler – Interior Architect & Designer</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #080b0d; /* Night color for text */
+      line-height: 1.6;
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Section Padding */
+    section {
+      padding: 100px 20px;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: url('https://images.unsplash.com/photo-1616046229478-9901c5536a45?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1480&q=80') no-repeat center center/cover;
+      color: #ffffff; /* White text */
+      text-align: center;
+      padding: 200px 20px;
+      position: relative;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(8, 11, 13, 0.5); /* Dark overlay for better text readability */
+    }
+
+    .hero h1 {
+      font-size: 4.5rem;
+      margin-bottom: 20px;
+      font-weight: bold;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero p {
+      font-size: 2rem;
+      margin-bottom: 40px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero .cta-button {
+      background: #d90429; /* Fire Engine Red */
+      color: #ffffff;
+      padding: 20px 50px;
+      border-radius: 50px;
+      font-size: 1.5rem;
+      font-weight: bold;
+      transition: background 0.3s ease, transform 0.3s ease;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero .cta-button:hover {
+      background: #ac0420; /* Darker red for hover */
+      transform: scale(1.05);
+    }
+
+    /* About Section */
+    .about {
+      background: #ffffff; /* White background */
+      text-align: center;
+    }
+
+    .about h2 {
+      font-size: 3.5rem;
+      margin-bottom: 30px;
+      color: #080b0d; /* Night color */
+    }
+
+    .about p {
+      max-width: 800px;
+      margin: 0 auto 30px;
+      font-size: 1.5rem;
+      color: #333333; /* Dark gray for readability */
+    }
+
+    .about ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .about ul li {
+      background: #f9f9f9;
+      padding: 20px 40px;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: #080b0d; /* Night color */
+      transition: transform 0.3s ease;
+    }
+
+    .about ul li:hover {
+      transform: translateY(-10px);
+    }
+
+    /* Portfolio Section */
+    .portfolio {
+      background: #080b0d; /* Night background */
+      color: #ffffff; /* White text */
+      text-align: center;
+    }
+
+    .portfolio h2 {
+      font-size: 3.5rem;
+      margin-bottom: 40px;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      padding: 0 20px;
+    }
+
+    .portfolio-grid img {
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .portfolio-grid img:hover {
+      transform: scale(1.05);
+    }
+
+    .portfolio .cta-button {
+      margin-top: 50px;
+      background: #d90429; /* Fire Engine Red */
+      color: #ffffff;
+      padding: 20px 50px;
+      border-radius: 50px;
+      font-size: 1.5rem;
+      font-weight: bold;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .portfolio .cta-button:hover {
+      background: #ac0420; /* Darker red for hover */
+      transform: scale(1.05);
+    }
+
+    /* Services Section */
+    .services {
+      background: #ffffff; /* White background */
+      text-align: center;
+    }
+
+    .services h2 {
+      font-size: 3.5rem;
+      margin-bottom: 40px;
+      color: #080b0d; /* Night color */
+    }
+
+    .services ul {
+      list-style: none;
+      padding: 0;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .services ul li {
+      background: #f9f9f9;
+      padding: 25px 40px;
+      margin-bottom: 20px;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #080b0d; /* Night color */
+      transition: transform 0.3s ease;
+    }
+
+    .services ul li:hover {
+      transform: translateY(-10px);
+    }
+
+    /* Waitlist Section */
+    .waitlist {
+      background: #d90429; /* Fire Engine Red */
+      color: #ffffff; /* White text */
+      text-align: center;
+    }
+
+    .waitlist h2 {
+      font-size: 3.5rem;
+      margin-bottom: 40px;
+    }
+
+    .waitlist p {
+      max-width: 800px;
+      margin: 0 auto 40px;
+      font-size: 1.5rem;
+    }
+
+    .waitlist iframe {
+      width: 100%;
+      max-width: 640px;
+      height: 381px;
+      border: none;
+      margin: 0 auto;
+      display: block;
+    }
+
+    /* Contact Section */
+    .contact {
+      background: #080b0d; /* Night background */
+      color: #ffffff; /* White text */
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .contact h2 {
+      font-size: 3.5rem;
+      margin-bottom: 40px;
+    }
+
+    .contact p {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+
+    .contact a {
+      color: #d90429; /* Fire Engine Red */
+      margin: 0 20px;
+      font-size: 1.5rem;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .contact a:hover {
+      color: #ac0420; /* Darker red for hover */
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Talat Gouler</h1>
+    <p>Interior Architect & Designer</p>
+    <p>Crafting spaces with <span style="color: #d90429;">meaning</span> and <span style="color: #d90429;">precision</span></p>
+    <a href="#waitlist" class="cta-button">Join the Waitlist</a>
+  </section>
+
+  <!-- About Section -->
+  <section class="about">
+    <h2>About Me</h2>
+    <p>With over a decade of experience in interior architecture and design, I specialize in creating spaces that blend functionality with artistry. My approach is rooted in precision, creativity, and a deep understanding of my clients' needs.</p>
+    <ul>
+      <li>Featured in Architectural Digest</li>
+      <li>10+ years of experience</li>
+      <li>50+ completed projects</li>
+    </ul>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section class="portfolio">
+    <h2>Featured Projects</h2>
+    <div class="portfolio-grid">
+      <img src="https://via.placeholder.com/400x300" alt="Project 1">
+      <img src="https://via.placeholder.com/400x300" alt="Project 2">
+      <img src="https://via.placeholder.com/400x300" alt="Project 3">
+    </div>
+    <a href="#waitlist" class="cta-button">View Full Portfolio</a>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services">
+    <h2>What I Do</h2>
+    <ul>
+      <li>Interior Design</li>
+      <li>3D Visualization</li>
+      <li>Architecture Consultancy</li>
+    </ul>
+  </section>
+
+  <!-- Waitlist Section -->
+  <section class="waitlist" id="waitlist">
+    <h2>Be the First to Explore My Full Portfolio!</h2>
+    <p>Get exclusive updates, early access to my portfolio, and behind-the-scenes insights into my design process.</p>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScaOyONcpwL2CY8A_OooqcHdKXRGxSIQ2wx0ZfNpuSd4rQjKQ/viewform?embedded=true" width="640" height="381" frameborder="0" marginheight="0" marginwidth="0">Yükleniyor…</iframe>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact">
+    <h2>Let’s Connect</h2>
+    <p>Email: talat@goulerdesign.com</p>
+    <p>Phone: +123 456 7890</p>
+    <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+    <a href="https://instagram.com" target="_blank">Instagram</a>
+  </section>
+</body>
+</html>
